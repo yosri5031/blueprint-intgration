@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Crystal invoces</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="./plugins/fontawesome-free/css/all.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="./plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="./plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="./plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="./dist/css/adminlte.min.css">
+  <!-- Favicons -->
+  <link href="assets/img/hero-img.png" rel="icon">
+  <link href="assets/img/hero-img.png" rel="apple-touch-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Arsha
+  * Updated: Sep 18 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top header-inner-pages">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="index.html">Crystal</a></h1>
+    
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
+          <li><a class="nav-link   scrollto" href="convert Json.html">Convert Json </a></li>
+         
+          <li><a class="nav-link   scrollto" href="listeOrder.html">Liste Orders </a></li>
+
+       
+          <li><a class="getstarted scrollto" href="uploadFacture.html">New Invoice</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>List Of All Orders </li>
+        </ol>
+       <center><h2>All Orders</h2></center> 
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center">
+        
+           
+            <p>This All orders in our database </p>
+         
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-header">
+            
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>File Name</th>
+                  <th>Shipp To (first name) </th>
+                  <th>Shipp To (last name) </th>
+                  <th>Email Shipp To </th>
+                  <th>Bill To</th>
+                  <th>Email Bill To </th>
+                  <th>Items </th>
+                  <th>Options</th>
+                  <th>Quantity</th>
+                  <th>Total(Studio) </th>
+                </tr>
+                </thead>
+                <tbody>
+               
+          
+             
+                </tbody>
+
+                <tfoot>
+                <tr>
+                  <th>Order ID</th>
+                    <th>File Name</th>
+                    <th>Shipp To (first name) </th>
+                    <th>Shipp To (last name) </th>
+                    <th>Email Shipp To </th>
+                    <th>Bill To</th>
+                    <th>Email Bill To </th>
+                    <th>Items</th>
+                    <th>Options</th>
+                    <th>Quantity</th>
+                    <th>Total(Studio)</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.card-body -->
+          </div>
+    
+
+  </div>
+     
+            
+      
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>AB Crystal Collection</h3>
+            <p>
+              4360 Chem de la Côte-de-Liesse UNITÉ 210,<br> Mont Royal, Québec H4N2P7,<br> Canada<br><br>
+
+              <strong>Phone:</strong> +1 (514)667-5776<br>
+              <strong>Email:</strong> info@abcrystalcollection.com<br>
+            </p>
+          </div>
+  
+          
+          </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>AB Crystal Collection</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.getElementById('uploadForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+  
+      const formData = new FormData();
+      const jsonFiles = document.getElementById('jsonFiles').files;
+  
+      if (jsonFiles.length > 0) {
+        formData.append('jsonFiles', jsonFiles[0]);
+  
+        try {
+          const response = await fetch('http://localhost:3000/upload', {
+            method: 'POST',
+            body: formData
+          });
+  
+          if (response.ok) {
+            const data = await response.json();
+            document.getElementById('successMessage').innerText = data.message;
+          } else {
+            const errorData = await response.json();
+            document.getElementById('errorMessage').innerText = errorData.message;
+          }
+        } catch (error) {
+          console.error('Error:', error);
+          document.getElementById('errorMessage').innerText = 'An error occurred while processing your request.';
+        }
+      } else {
+        document.getElementById('errorMessage').innerText = 'No file selected.';
+      }
+    });
+  </script>
+<!-- jQuery -->
+<script src="./plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="./plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="./plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="./plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="./plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="./plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="./plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="./plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="./plugins/jszip/jszip.min.js"></script>
+<script src="./plugins/pdfmake/pdfmake.min.js"></script>
+<script src="./plugins/pdfmake/vfs_fonts.js"></script>
+<script src="./plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="./plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="./plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<!-- AdminLTE App -->
+<script src="./dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="./dist/js/demo.js"></script>
+<!-- Page specific script -->
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+$(document).ready(function() {
+  // Make AJAX request to fetch data
+  $.ajax({
+    url: 'http://localhost:3000/jsonData', // Replace with your API endpoint URL
+    method: 'GET',
+    success: function(response) {
+      if (response.success) {
+        const jsonData = response.data;
+        const tableBody = $('#example1 tbody');
+        console.log(`Length of orders: ${jsonData.length}`);
+        const qt=jsonData.length
+
+
+        // Loop through fetched data and populate the table
+        jsonData.forEach(function(item) {
+          const row = $('<tr>');
+            row.append($('<td>').text(item.data.orders[0].id));
+          row.append($('<td>').text(item.fileName)); // Replace with actual fields from your JSON data
+          row.append($('<td>').text(item.data.shipTo.firstName));
+          row.append($('<td>').text(item.data.shipTo.lastName));
+          row.append($('<td>').text(item.data.shipTo.email));
+          row.append($('<td>').text(item.billToUser));
+          row.append($('<td>').text(item.data.billTo.email));
+          
+          row.append($('<td>').text(item.data.orders[0].serviceOrders[0].items[0].name));
+          row.append($('<td>').text(item.data.orders[0].serviceOrders[0].items[0].quantity));
+          row.append($('<td>').text(item.data.orders[0].serviceOrders[0].items[0].quantity));
+          row.append($('<td>').text(item.data.orders[0].total));
+          tableBody.append(row);
+        });
+      } else {
+        console.error('Failed to fetch data:', response.message);
+      }
+    },
+    error: function(xhr, status, error) {
+      console.error('AJAX request failed:', error);
+    }
+  });
+});
+</script>
+</body>
+
+</html>

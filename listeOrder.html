@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Crystal invoces</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="./plugins/fontawesome-free/css/all.min.css">
+  <!-- DataTables -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+  <script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="./dist/css/adminlte.min.css">
+  <!-- Favicons -->
+  <link href="assets/img/hero-img.png" rel="icon">
+  <link href="assets/img/hero-img.png" rel="apple-touch-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Arsha
+  * Updated: Sep 18 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  <script>
+  // Fonction de recherche
+  function searchByDate() {
+
+// Récupérer la date saisie
+var searchDate = document.getElementById("dateSearch").value;
+
+// Vider la date si vide
+if(!searchDate) {
+  searchDate = ''; 
+}
+
+// Filtrer la table 1
+filterTable1(searchDate);
+// Filtrer la table 2
+filterTable2(searchDate);
+// Filtrer la table 3
+filterTable3(searchDate);
+
+}
+
+function filterTable1(date) {
+
+var table = document.getElementById("example1");
+var rows = table.rows;
+
+for(var i = 1; i < rows.length; i++) {
+
+  var row = rows[i];
+  
+  var rowDate = row.cells[1].innerHTML;
+  rowDate = rowDate.split(" ")[0];
+
+  if(date) {
+    if(rowDate != date) {
+      row.style.display = "none";  
+    } else {
+      row.style.display = "";
+    }
+  } else {
+    // Afficher tous les enregistrements si pas de date
+    row.style.display = "";
+  }
+  
+
+}
+
+}
+function filterTable2(date) {
+
+var table = document.getElementById("example2");
+var rows = table.rows;
+
+for(var i = 1; i < rows.length; i++) {
+
+  var row = rows[i];
+  
+  var rowDate = row.cells[1].innerHTML;
+  rowDate = rowDate.split(" ")[0];
+
+  if(date) {
+    if(rowDate != date) {
+      row.style.display = "none";  
+    } else {
+      row.style.display = "";
+    }
+  } else {
+    // Afficher tous les enregistrements si pas de date
+    row.style.display = "";
+  }
+  
+
+}
+
+}
+
+function filterTable3(date) {
+
+var table = document.getElementById("example3");
+var rows = table.rows;
+
+for(var i = 1; i < rows.length; i++) {
+
+  var row = rows[i];
+  
+  var rowDate = row.cells[1].innerHTML;
+  rowDate = rowDate.split(" ")[0];
+
+  if(date) {
+    if(rowDate != date) {
+      row.style.display = "none";  
+    } else {
+      row.style.display = "";
+    }
+  } else {
+    // Afficher tous les enregistrements si pas de date
+    row.style.display = "";
+  }
+  
+
+}
+
+}
+
+
+
+</script>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top header-inner-pages">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="index.html">Crystal</a></h1>
+    
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
+          <li><a class="nav-link   scrollto" href="convert Json.html">Convert Json </a></li>
+         
+          <li><a class="nav-link   scrollto" href="listeOrder.html">Liste Orders </a></li>
+
+       
+          <li><a class="getstarted scrollto" href="uploadFacture.html">New Invoice</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+    
+    <script>
+      
+  document.addEventListener("DOMContentLoaded", function() {
+  
+    var colors = ['#ff0000', '#00ff00', '#0000ff','#002255','#ff4587'];
+    setTimeout(() => {
+
+    $('#example2 tr').each(function() {
+      var orderId = $(this).find('.order-id').text();  
+      var color = colors[Math.floor(Math.random() * colors.length)];
+      $(this).find('.order-status').css('background-color', color);
+    });
+    },500);
+  });
+  
+    </script>
+    
+
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>List Of All Orders </li>
+        </ol>
+       <center><h2>All Orders</h2></center> 
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center">
+        
+           
+            <p>This All orders in our database </p>
+            <input  id="dateSearch" placeholder="Input date yyyy-mm-dd"> <button onclick="searchByDate()">Search</button>   
+    <div class="container mt-4">
+  <div class="card">
+    <div class="card-header">
+
+      <button id="export">Export to CSV</button>
+
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+      <table id="example1" class="table table-bordered table-striped">
+        <thead>
+          <tr id="orderRow">
+            <th>File Name</th>
+            <th>Order Date</th>
+            <th>Order ID</th>
+            <th>Ship To First Name</th>
+            <th>Ship To Last Name</th>
+            <th>Ship To Email</th>
+            <th>Bill To First Name</th>
+            <th>Bill To Last Name</th>
+            <th>Bill To Email</th>
+            <th>Total (Studio)</th>
+            <th id="total">Total ABCC</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <table id="example2" class="table">
+        <thead>
+          <tr class="order-status">
+            <th class="order-id">Order ID</th>
+            <th style="display:none">Order Date</th>
+            <th>Item Name</th>
+            <th>Quantity</th>
+            <th>Price ABCC </th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <table id="example3" class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th style="display:none">Order Date</th>
+            <th>Item</th>
+            <th>Option Name</th>
+            <th>Option Value</th>
+            <th>Price(Studio)</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <!-- /.card-body -->
+  </div>
+</div>
+     
+            
+      <p> Order Total Calculator </p>
+<table class="table table-bordered table-striped" id="prices">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>SKU</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Small Rectangle</td>
+        <td>AW2MN0</td>
+        <td class="price">29.99</td>
+        <td><input type="number" class="quantity" value="0"></td>
+        <td class="total">0.00</td>
+      </tr>
+      <tr>
+        <td>Medium Rectangle</td>
+        <td>Medium Rectangle</td>
+        <td class="price">52.49</td>
+        <td><input type="number" class="quantity" value="0"></td>
+        <td class="total">0.00</td>
+      </tr>
+      <tr>
+        <td>Large Rectangle</td>
+        <td>Large Rectangle</td>
+        <td class="price">76.99</td>
+        <td><input type="number" class="quantity" value="0"></td>
+        <td class="total">0.00</td>
+      </tr>
+      <!-- Add more product rows here -->
+<tr>
+        <td>XL Rectangle</td>
+        <td>XL Rectangle</td>
+        <td class="price">104.99</td>
+        <td><input type="number" class="quantity" value="0"></td>
+        <td class="total">0.00</td>
+      </tr>
+      <tr>
+        <td>XXL Rectangle</td>
+        <td>XXL Rectangle</td>
+        <td class="price">279.99</td>
+        <td><input type="number" class="quantity" value="0"></td>
+        <td class="total">0.00</td>
+      </tr>
+<tr>
+        <td>Small Heart</td>
+        <td>Small Heart</td>
+        <td class="price">52.49</td>
+        <td><input type="number" class="quantity" value="0"></td>
+        <td class="total">0.00</td>
+      </tr>
+<tr>
+        <td>Large Heart</td>
+        <td>Large Heart</td>
+        <td class="price">69.99</td>
+        <td><input type="number" class="quantity" value="0"></td>
+        <td class="total">0.00</td>
+      </tr>
+<tr>
+        <td>Iceberg</td>
+        <td>Iceberg</td>
+        <td class="price">125.99</td>
+        <td><input type="number" class="quantity" value="0"></td>
+        <td class="total">0.00</td>
+      </tr>
+<tr>
+        <td>Diamond </td>
+        <td>Diamond </td>
+        <td class="price">76.99</td>
+        <td><input type="number" class="quantity" value="0"></td>
+        <td class="total">0.00</td>
+      </tr>
+<tr>
+        <td>Round </td>
+        <td>Round </td>
+        <td class="price">29.99</td>
+        <td><input type="number" class="quantity" value="0"></td>
+        <td class="total">0.00</td>
+      </tr>
+<tr colspan="4"> <b> Options </b> </tr>
+<tr>
+        <td>Led</td>
+        <td>Led Base </td>
+        <td class="price">19.99</td>
+        <td><input type="number" class="quantity" value="0"></td>
+        <td class="total">0.00</td>
+      </tr>
+<tr>
+        <td>Cleaning Kit</td>
+        <td>Cleaning Kit </td>
+        <td class="price">6.99</td>
+        <td><input type="number" class="quantity" value="0"></td>
+        <td class="total">0.00</td>
+      </tr>
+<tr>
+        <td>Text Input</td>
+        <td>Text Input </td>
+        <td class="price">3.99</td>
+        <td><input type="number" class="quantity" value="0"></td>
+        <td class="total">0.00</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="4">Grand Total</th>
+        <th id="grandTotal">0.00</th>
+      </tr>
+    </tfoot>
+  </table>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>AB Crystal Collection</h3>
+            <p>
+              4360 Chem de la Côte-de-Liesse UNITÉ 210,<br> Mont Royal, Québec H4N2P7,<br> Canada<br><br>
+
+              <strong>Phone:</strong> +1 (514)667-5776<br>
+              <strong>Email:</strong> info@abcrystalcollection.com<br>
+            </p>
+          </div>
+  
+          
+          </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>AB Crystal Collection</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+ 
+
+  
+  <script>
+    document.getElementById('uploadForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+  
+      const formData = new FormData();
+      const jsonFiles = document.getElementById('jsonFiles').files;
+  
+      if (jsonFiles.length > 0) {
+        formData.append('jsonFiles', jsonFiles[0]);
+  
+        try {
+          const response = await fetch('http://localhost:3000/upload', {
+            method: 'POST',
+            body: formData
+          });
+  
+          if (response.ok) {
+            const data = await response.json();
+            document.getElementById('successMessage').innerText = data.message;
+          } else {
+            const errorData = await response.json();
+            document.getElementById('errorMessage').innerText = errorData.message;
+          }
+        } catch (error) {
+          console.error('Error:', error);
+          document.getElementById('errorMessage').innerText = 'An error occurred while processing your request.';
+        }
+      } else {
+        document.getElementById('errorMessage').innerText = 'No file selected.';
+      }
+    });
+  </script>
+<!-- jQuery -->
+<script src="./plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="./plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="./plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="./plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="./plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="./plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="./plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="./plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="./plugins/jszip/jszip.min.js"></script>
+<script src="./plugins/pdfmake/pdfmake.min.js"></script>
+<script src="./plugins/pdfmake/vfs_fonts.js"></script>
+<script src="./plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="./plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="./plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<!-- AdminLTE App -->
+<script src="./dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="./dist/js/demo.js"></script>
+<!-- Page specific script -->
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+  
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- remplir la table -->
+<script>
+ 
+$(document).ready(function() {
+      // Make AJAX request to fetch data
+      $.ajax({
+        url: 'http://localhost:3000/jsonData', // Replace with your API endpoint URL
+        method: 'GET',
+        success: function(response) {
+          if (response.success) {
+            const jsonData = response.data;
+            const orderTableBody = $('#example1 tbody');
+            const itemTableBody = $('#example2 tbody');
+            const optionTableBody = $('#example3 tbody');
+            console.log(`Length of orders: ${jsonData.length}`);
+
+            // Loop through fetched data and populate the tables
+            jsonData.forEach(function(item) {
+              const orders = item.data.orders;
+              
+              orders.forEach(function(order) {
+                const orderRow = $('<tr>');
+                orderRow.append($('<td>').text(item.fileName));
+                orderRow.append($('<td>').text(order.orderDate));
+                orderRow.append($('<td>').text(order.id));
+                orderRow.append($('<td>').text(item.data.shipTo.firstName));
+                orderRow.append($('<td>').text(item.data.shipTo.lastName));
+                orderRow.append($('<td>').text(item.data.shipTo.email));
+                orderRow.append($('<td>').text(item.data.billTo.firstName));
+                orderRow.append($('<td>').text(item.data.billTo.lastName));
+                orderRow.append($('<td>').text(item.data.billTo.email));
+                orderRow.append($('<td>').text(order.total));
+                orderRow.append($('<td id="totalOrderValue">'));
+
+                orderTableBody.append(orderRow);
+
+                const itemPrices = {
+  'Small Rectangle': 29.99,
+  'Medium Rectangle': 52.49,
+  'Large Rectangle': 76.99,
+  'XL Rectangle': 104.99,
+  'XXL Rectangle': 279.99,
+  'Small Heart': 52.49,
+  'Large Heart': 69.99,
+  'Iceberg': 125.99,
+  'Diamond': 76.99,
+  'Round': 29.99
+};
+const serviceOrders = order.serviceOrders;
+serviceOrders.forEach(function(serviceOrder) {
+  const items = serviceOrder.items;
+  items.forEach(function(item) {
+    const itemName = item.name;
+    const itemPrice = itemPrices[itemName] || 'N/A'; // Get the price from the itemPrices object, or use 'N/A' if the item name is not found
+    const itemRow = $('<tr>');
+    itemRow.append($('<td>').text(order.id));
+    itemRow.append($('<td style="display:none">').text(order.orderDate));
+    itemRow.append($('<td>').text(item.name));
+    itemRow.append($('<td>').text(item.quantity));
+
+    itemTableBody.append(itemRow); // Append the row to the table before adding the price column
+
+    // Select the last row added (current itemRow) and append the price column
+    itemRow.append($('<td>').text(itemPrice));
+                    
+
+                    const options = item.options;
+                    options.forEach(function(option) {
+                      const optionRow = $('<tr>');
+                      optionRow.append($('<td>').text(order.id));
+                      optionRow.append($('<td style="display:none">').text(order.orderDate));
+                      optionRow.append($('<td>').text(item.name));
+                      optionRow.append($('<td>').text(option.name));
+                      optionRow.append($('<td style="text-size:22px;">').text(option.value));
+                      optionRow.append($('<td>').text(option.price));
+                      optionTableBody.append(optionRow);
+                    });
+                  });
+                  const itemRow2 = $('<tr>');
+                    itemRow2.append($('<td>').text('***'));
+                    itemRow2.append($('<td>').text('***'));
+                    itemRow2.append($('<td>').text('***'));
+                    itemTableBody.append(itemRow2);
+                    const itemRow3 = $('<tr>');
+                    itemRow3.append($('<td>').text('***'));
+                    itemRow3.append($('<td>').text('***'));
+                    itemRow3.append($('<td>').text('***'));
+                    itemRow3.append($('<td>').text('***'));
+                    itemRow3.append($('<td>').text('***'));
+                    optionTableBody.append(itemRow3);
+
+                });
+              });
+              
+
+            });
+
+            
+          } else {
+            console.error('Failed to fetch data:', response.message);
+          }
+        
+        },
+        error: function(xhr, status, error) {
+          console.error('AJAX request failed:', error);
+        }
+        
+      });
+     
+    });
+    
+
+    
+</script>
+<!-- Script Total Value 
+<script>
+  const waitForTables = () => {
+  return new Promise((resolve) => {
+    console.log("Checking for tables...");
+
+    if (document.getElementById('example2').innerHTML && document.getElementById('example3').innerHTML) {
+      console.log("Tables found!");
+      resolve();
+    } else {
+      setTimeout(() => {
+        waitForTables().then(resolve);
+      }, 100);
+    }
+  });
+};
+
+async function calculateOrderTotal(orderId) {
+  // Map of static item prices
+  const itemPrices = {
+    'Small Rectangle': 29.99,
+    'Medium Rectangle': 52.49,
+    'Large Rectangle': 76.99,
+    'XL Rectangle': 104.99,
+    'XXL Rectangle': 279.99,
+    'Small Heart': 52.49,
+    'Large Heart': 69.99,
+    'Iceberg': 125.99,
+    'Diamond': 76.99,
+    'Round': 29.99
+  };
+
+  // Map of static option prices
+  const optionPrices = {
+    'Led': 19.99,
+    'Cleaning Kit': 6.99,
+    'Text Input': 3.99
+  };
+
+  // Get items for this order from example2 table
+  const itemsTable = document.getElementById('example2');
+  const itemsRows = itemsTable.querySelectorAll(`tr[data-order-id="${orderId}"]`);
+
+  // Loop through items
+  let total = 0;
+  for (let j = 0; j < itemsRows.length; j++) {
+    const itemRow = itemsRows[j];
+    const itemName = itemRow.querySelector('td:nth-child(2)').textContent;
+    const quantity = itemRow.querySelector('td:nth-child(3)').textContent;
+
+    const price = itemPrices[itemName];
+    total += price * quantity;
+  }
+
+  // Get options for this order from example3 table
+  const optionsTable = document.getElementById('example3');
+  const optionsRows = optionsTable.querySelectorAll(`tr[data-order-id="${orderId}"]`);
+
+  // Loop through options   
+  for (let k = 0; k < optionsRows.length; k++) {
+    const optionRow = optionsRows[k];
+
+    // Get option name and price from table
+    const optionName = optionRow.querySelector('td:nth-child(3)').textContent;
+    const price = optionRow.querySelector('td:nth-child(5)').textContent;
+
+    if (price > 0) {
+      // Look up static price
+      const optionPrice = optionPrices[optionName];
+      // Set quantity to 1
+      let quantity = 1;
+      // Add to total
+      total += optionPrice * quantity;
+    }
+  }
+
+  return total;
+}
+
+waitForTables().then(() => {
+  // Get order IDs from first table
+  const orderIds = Array.from(document.getElementById('example2').querySelectorAll('th'))
+    .map(th => th.textContent);
+
+  console.log("Tables ready, calculating...");
+
+  // Loop through each order
+  for (let i = 0; i < orderIds.length; i++) {
+    // Get order ID
+    const orderId = orderIds[i];
+
+    // Calculate order total
+    const orderTotal = calculateOrderTotal(orderId);
+
+    // Update the "Total" cell for the order
+    $(`#example1 tr[data-order-id="${orderId}"] #total`).text(orderTotal);
+  }
+});
+</script> -->
+<!-- Table Calculatrice-->
+<script>
+// Get all the quantity inputs and price elements
+const quantityInputs = document.getElementsByClassName("quantity");
+const priceElements = document.getElementsByClassName("price");
+const totalElements = document.getElementsByClassName("total");
+const grandTotalElement = document.getElementById("grandTotal");
+
+// Function to update the total for a row
+function updateRowTotal(index) {
+  const quantity = parseInt(quantityInputs[index].value);
+  const price = parseFloat(priceElements[index].innerText);
+  const total = quantity * price;
+  totalElements[index].innerText = total.toFixed(2);
+
+  updateGrandTotal();
+}
+
+// Function to update the grand total
+function updateGrandTotal() {
+  let grandTotal = 0;
+  for (let i = 0; i < totalElements.length; i++) {
+    grandTotal += parseFloat(totalElements[i].innerText);
+  }
+  grandTotalElement.innerText = grandTotal.toFixed(2);
+}
+
+// Add event listeners to the quantity inputs
+for (let i = 0; i < quantityInputs.length; i++) {
+  quantityInputs[i].addEventListener("input", function() {
+    updateRowTotal(i);
+  });
+}
+
+// Initial calculation of totals
+for (let i = 0; i < totalElements.length; i++) {
+  updateRowTotal(i);
+}
+</script>
+<!-- TOTAL ABCC -->
+<script>
+  
+
+// Define the prices for the items and options
+const itemPrices = {
+  'Small Rectangle': 29.99,
+  'Medium Rectangle': 52.49,
+  'Large Rectangle': 76.99,
+  'XL Rectangle': 104.99,
+  'XXL Rectangle': 279.99,
+  'Small Heart': 52.49,
+  'Large Heart': 69.99,
+  'Iceberg': 125.99,
+  'Diamond': 76.99,
+  'Round': 29.99
+};
+
+const optionPrices = {
+  'Led': 19.99,
+  'Cleaning Kit': 6.99,
+  'Text Input': 3.99
+};
+ // Function to calculate the total ABCC for a given order
+ function calculateTotalAbcc(orderId) {
+    let totalPrice = 0;
+
+    // Get all the rows containing items for the given order
+    const itemRows = Array.from(document.querySelectorAll('#example2 tbody tr'));
+    itemRows.forEach(function(row) {
+      const itemId = row.querySelector('td:nth-child(1)').textContent;
+      const itemName = row.querySelector('td:nth-child(3)').textContent;
+      const quantity = parseInt(row.querySelector('td:nth-child(4)').textContent);
+      const price = itemPrices[itemName];
+      totalPrice += quantity * price;
+    });
+
+    // Get all the rows containing options for the given order
+    const optionRows = Array.from(document.querySelectorAll('#example3 tbody tr'));
+    optionRows.forEach(function(row) {
+      const optionId = row.querySelector('td:nth-child(1)').textContent;
+      const optionName = row.querySelector('td:nth-child(4)').textContent;
+      const optionValue = row.querySelector('td:nth-child(5)').textContent;
+      const price = optionPrices[optionName];
+      totalPrice += price;
+    });
+
+    return totalPrice;
+  }
+
+// Call the calculateTotalAbcc function for each order in the #example1 table
+const orderIds = Array.from(document.querySelectorAll('#example1 tbody td:nth-child(3)'));
+orderIds.forEach(function(cell) {
+  const orderId = cell.textContent;
+  const totalAbcc = calculateTotalAbcc(orderId);
+  const targetCell = cell.parentNode.querySelector('td:nth-child(11)');
+  targetCell.textContent = totalAbcc;
+  console.log(`Order ID: ${orderId}, Total ABCC: ${totalAbcc}`);
+});
+
+// Verify the updated values in the console
+const updatedCells = Array.from(document.querySelectorAll('#example1 tbody td:nth-child(11)'));
+updatedCells.forEach(function(cell) {
+  console.log(`Updated cell value: ${cell.textContent}`);
+});
+</script>
+
+
+
+<!-- export csv order -->
+<script>
+// Tables
+const table1 = document.querySelector('#example1');
+const table2 = document.querySelector('#example2'); 
+const table3 = document.querySelector('#example3');
+
+// Button click
+document.getElementById('export').addEventListener('click', exportTables);
+
+function exportTables() {
+
+  // Extract data
+  const table1Data = extractTableData(table1);
+  const table2Data = extractTableData(table2);
+  const table3Data = extractTableData(table3);
+
+  // Concatenate headers
+  const allHeaders = concatenateHeaders(
+    table1Data.headers,
+    table2Data.headers, 
+    table3Data.headers
+  );
+
+  // Concatenate rows  
+  const allData = [];
+
+  for(let i = 0; i < table1Data.data.length; i++) {
+
+    const row1 = table1Data.data[i];
+    const row2 = table2Data.data[i];
+    const row3 = table3Data.data[i];
+
+    const concatenatedRow = [
+      ...row1,
+      ...row2, 
+      ...row3
+    ];
+
+    allData.push(concatenatedRow);
+
+  }
+
+  // Generate CSV
+  const csv = generateCsv(allHeaders, allData);
+
+  // Download
+  downloadCsv(csv);
+
+}
+
+// Helper functions
+
+// Extract headers and rows from a table
+function extractTableData(table) {
+
+const headers = [];
+const data = [];
+
+// Get headers
+for(let i = 0; i < table.rows[0].cells.length; i++) {
+headers.push(table.rows[0].cells[i].innerHTML);
+}
+
+// Get rows
+for(let i = 1; i < table.rows.length; i++) {
+const row = [];
+for(let j = 0; j < table.rows[i].cells.length; j++) {
+row.push(table.rows[i].cells[j].innerHTML);
+}
+data.push(row);
+}
+
+return {
+headers,
+data
+};
+
+}
+
+// Concatenate headers arrays
+function concatenateHeaders(...headersArrays) {
+return headersArrays.flat();
+}
+
+// Generate CSV string from headers and data
+function generateCsv(headers, data) {
+let csv = headers.join(",") + "\n";
+data.forEach(row => {
+csv += row.join(",") + "\n";
+});
+return csv;
+}
+
+// Download CSV file
+function downloadCsv(csv) {
+const blob = new Blob([csv], {type: "text/csv"});
+const url = URL.createObjectURL(blob);
+const link = document.createElement('a');
+link.href = url;
+link.download = "data.csv";
+link.click();
+URL.revokeObjectURL(url);
+}
+</script>
+</body>
+
+</html>
